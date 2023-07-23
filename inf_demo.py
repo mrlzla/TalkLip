@@ -96,10 +96,10 @@ def prepare_window(window):
     return x
 
 
-def detect_bbx(frames, fa):
+def detect_bbx(frames, fa, batch_size=8):
 
     height, width, _ = frames[0].shape
-    batches = [frames[i:i + 32] for i in range(0, len(frames), 32)]
+    batches = [frames[i:i + batch_size] for i in range(0, len(frames), batch_size)]
 
     bbxs = list()
     for fb in batches:
