@@ -6,12 +6,13 @@ This repo is the official implementation of 'Seeing What You Said: Talking Face 
 # 🔥 News
 1. We upload a Talking_face_demo.pptx to this repository which contains some demo videos.
 2. Fix the GPU out-of-memory error in train.py. Running train.py with a batch_size of 8 requires approximately 24GB of memory. However, in some rare cases, it might need more than 24GB and trigger an error. We have resolved this issue using a try-and-catch mechanism. --  19/July/2023
+3. We upload a checkpoint of the discriminator as requested in the issue.
 
 ## Prerequisite 
 
 1. `pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html`.
 2. Install [AV-Hubert](https://github.com/facebookresearch/av_hubert) by following his installation.
-3. Install supplementary packages via `pip install -r requirements.txt`
+3. Install supplementary packages via `pip install -r requirement.txt`
 5. Install ffmpeg. We adopt version=4.3.2. Please double check wavforms extracted from mp4 files. Extracted wavforms should not contain prefix of 0. If you use anaconda, you can refer to `conda install -c conda-forge ffmpeg==4.2.3`
 6. Download the pre-trained checkpoint of face detector [pre-trained model](https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth) and put it to `face_detection/detection/sfd/s3fd.pth`. Alternative [link](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/prajwal_k_research_iiit_ac_in/EZsy6qWuivtDnANIG73iHjIBjMSoojcIV0NULXV-yiuiIg?e=qTasa8).
 
@@ -56,7 +57,7 @@ Checkpoints
 | Lip reading observer 1 | AV-hubert (large) fine-tuned on LRS2 | [Link](https://drive.google.com/file/d/1wOsiXKLOeScrU6XuzebYA6Y-9ncd8-le/view?usp=share_link) |
 | Lip reading observer 2 | Conformer lip-reading network | [Link](https://drive.google.com/file/d/16tpyaXLLTYUnIBT_YEWQ5ui6xUkBGcpM/view?usp=share_link) |
 | Lip reading expert | lip-reading network for training of talking face generation | [Link](https://drive.google.com/file/d/1XAVhWXjd77UHsfna9O8cASHr3iGiQBQU/view?usp=share_link) |
-
+| Discriminator | Discriminator of GAN | [Link](https://drive.google.com/file/d/17-3fqKCrHzkzyPnHJ_9_MuJ4zCkK5EU-/view?usp=sharing) |
 
 ## Train 
 Some AV-Hubert files need to be modified.
